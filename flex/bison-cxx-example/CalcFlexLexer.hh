@@ -14,6 +14,9 @@
 // We need this for the yy::calcxx_parser::symbol_type:
 #include "calc++-parser.hh"
 
+// We need this for the yy::location type:
+#include "location.hh"
+
 class CalcFlexLexer : public yyFlexLexer {
 public:
     // Use the superclass's constructor:
@@ -23,4 +26,9 @@ public:
     // definition into `calc++-scanner.cc`:
     yy::calcxx_parser::symbol_type yylex(calcxx_driver& driver);
 
+    // This seems like a reasonable place to put the location object
+    // rather than it being static (in the sense of having internal
+    // linkage at translation unit scope, not in the sense of being a
+    // class variable):
+    yy::location loc;
 };

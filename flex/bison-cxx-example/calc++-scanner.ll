@@ -15,9 +15,6 @@
 # undef yywrap
 # define yywrap() 1
 
-// The location of the current token.
-static yy::location loc;
-
 // CHANGE: "Code run each time a pattern is matched" moved from its
 // own block below (this change was not strictly necessary).
 #define YY_USER_ACTION  loc.columns (yyleng);
