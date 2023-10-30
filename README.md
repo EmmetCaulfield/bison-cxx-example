@@ -186,7 +186,7 @@ But how did the parser know how to call `yylex` before?
 
 Well, it knew _to_ call `yylex` because `bison` parsers _always_ call
 `yylex`. Previously `yylex` was a function symbol with external
-linkage provided by (compiled code emitted by)` flex` that gets
+linkage provided by (compiled code emitted by) `flex` that gets
 “connected” at link time.
 
 But, as noted earlier, and unsurprising from the similarities between
