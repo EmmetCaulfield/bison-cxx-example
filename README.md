@@ -33,7 +33,7 @@ The Problem
 -----------
 
 You might think that if you just gave `flex` the `--c++` option (or
-specified `%option c++` in the `calc++-scanner.ll` that everything
+specified `%option c++` in the `calc++-scanner.ll`) that everything
 would just work, right?
 
 But if you try that, you get 187 lines of:
