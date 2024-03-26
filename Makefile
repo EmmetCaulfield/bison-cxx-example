@@ -23,6 +23,7 @@ DNAME    := calc++-driver
 
 ${ANAME}: ${ANAME}.o ${DNAME}.o ${PNAME}.o ${LNAME}.o
 
+.PHONY: objs
 objs: ${PNAME}.o ${LNAME}.o ${DNAME}.o ${ANAME}.o
 
 # Application dependencies:
@@ -52,7 +53,11 @@ ${LNAME}.o: ${LNAME}.cc ${PNAME}.hh
 %.i: %.cc
 	${CXX} -E ${CPPFLAGS} ${CXXFLAGS} -o $@ $<
 
+.PHONY: test
+test:
+	./${ANAME} ${ANAME}.in
 
+.PHONY: clean
 clean:
 	rm -f $(LNAME:=.cc) $(LNAME:=.hh) $(PNAME:=.hh) $(PNAME:=.cc)
 	rm -f $(PNAME:=.output) position.hh stack.hh location.hh
