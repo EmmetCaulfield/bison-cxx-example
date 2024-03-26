@@ -54,7 +54,7 @@ ${LNAME}.o: ${LNAME}.cc ${PNAME}.hh
 	${CXX} -E ${CPPFLAGS} ${CXXFLAGS} -o $@ $<
 
 .PHONY: test
-test:
+test: ${ANAME}
 	./${ANAME} ${ANAME}.in
 
 .PHONY: clean
